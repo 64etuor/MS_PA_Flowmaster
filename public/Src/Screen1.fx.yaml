@@ -1,0 +1,12 @@
+Screen1 As screen:
+    LoadingSpinnerColor: =RGBA(105, 121, 126, 1)
+
+    Gallery1 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        DelayItemLoading: =true
+        Items: ='[MR_01]Manufacturing Record'
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(320, Self.Width - 60), Min(320, Self.Height - 60))
+        Y: =40
+        ZIndex: =1
+

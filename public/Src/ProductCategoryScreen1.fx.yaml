@@ -1,0 +1,320 @@
+ProductCategoryScreen1 As screen:
+    LoadingSpinnerColor: =RGBA(105, 121, 126, 1)
+
+    RectQuickActionBar_WO_1 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(105, 121, 126, 1)
+        Height: =88
+        Width: =Parent.Width
+        Y: =1
+        ZIndex: =18
+
+    IconBackarrow1_7 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Back()
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="목록으로 돌아가기"
+        Width: =88
+        Y: =1
+        ZIndex: =19
+
+    LblAppName2_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        Height: =88
+        Size: =25
+        Text: ="Product Category"
+        Width: |
+            =Parent.Width - Self.X - IconBackarrow1_7.Width
+        Wrap: =false
+        X: =80
+        Y: =1
+        ZIndex: =20
+
+    Container4 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =225
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =App.Width
+        Y: =RectQuickActionBar_WO_1.Height
+        ZIndex: =27
+
+        Label7_2 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(139, 154, 159, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            Italic: =true
+            Size: =gblFontSize
+            Text: ="Standard ESS (2C6R)"
+            Width: =App.Width - 60
+            X: =10
+            Y: =10
+            ZIndex: =1
+
+        btn_ess_bpu As 버튼:
+            BasePaletteColor: =RGBA(141, 229, 250, 1)
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            FontSize: =gblFontSize
+            Height: =74
+            OnSelect: |-
+                =Navigate(RegisterScreen_BPU,ScreenTransition.Fade);
+                Set(varProductType, "BPU")
+            Text: ="BPUs"
+            Width: =158
+            X: =btn_ess_bcp.X - Self.Width - 40
+            Y: =(Parent.Height + Label7_2.Height- Self.Height) * 0.5
+            ZIndex: =2
+
+        btn_ess_bcp As 버튼:
+            Appearance: ='ButtonCanvas.Appearance'.Primary
+            BasePaletteColor: =RGBA(189, 178, 176, 1)
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            FontSize: =gblFontSize
+            Height: =74
+            IconStyle: ='ButtonCanvas.IconStyle'.Outline
+            Text: ="BCPs"
+            Width: =158
+            X: =(Parent.Width - Self.Width) * 0.5
+            Y: =(Parent.Height + Label7_2.Height- Self.Height) * 0.5
+            ZIndex: =3
+
+        btn_ess_rack As 버튼:
+            BasePaletteColor: =RGBA(189, 178, 176, 1)
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            FontSize: =gblFontSize
+            Height: =74
+            Text: ="RACKs"
+            Width: =158
+            X: =btn_ess_bcp.X + Self.Width + 40
+            Y: =(Parent.Height + Label7_2.Height- Self.Height) * 0.5
+            ZIndex: =4
+
+    Container4_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =225
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =App.Width
+        Y: =Container4.Y + Container4.Height
+        ZIndex: =28
+
+        Label7_3 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(139, 154, 159, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            Italic: =true
+            Size: =gblFontSize
+            Text: ="UPS (1C4R, 1C5R)"
+            Width: =App.Width - 60
+            X: =10
+            Y: =10
+            ZIndex: =1
+
+        btn_ess_bpu_1 As 버튼:
+            BasePaletteColor: =RGBA(189, 178, 176, 1)
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            FontSize: =gblFontSize
+            Height: =74
+            Text: ="BPUs"
+            Width: =158
+            X: =btn_ess_bcp_1.X - Self.Width - 40
+            Y: =(Parent.Height + Label7_3.Height- Self.Height) * 0.5
+            ZIndex: =2
+
+        btn_ess_bcp_1 As 버튼:
+            Appearance: ='ButtonCanvas.Appearance'.Primary
+            BasePaletteColor: =RGBA(141, 229, 250, 1)
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            FontSize: =gblFontSize
+            Height: =74
+            IconStyle: ='ButtonCanvas.IconStyle'.Outline
+            OnSelect: |-
+                =Navigate(RegisterScreen_BCP,ScreenTransition.Fade);
+                Set(varProductType, "BCP")
+            Text: ="BCPs"
+            Width: =158
+            X: =(Parent.Width - Self.Width) * 0.5
+            Y: =(Parent.Height + Label7_3.Height- Self.Height) * 0.5
+            ZIndex: =3
+
+        btn_ess_rack_1 As 버튼:
+            BasePaletteColor: =RGBA(189, 178, 176, 1)
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            FontSize: =gblFontSize
+            Height: =74
+            Text: ="RACKs"
+            Width: =158
+            X: =btn_ess_bcp_1.X + Self.Width + 40
+            Y: =(Parent.Height + Label7_3.Height- Self.Height) * 0.5
+            ZIndex: =4
+
+    cont4_menubar_7 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =1006
+        ZIndex: =35
+
+        Rectangle2_7 As rectangle:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =1
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(219, 221, 222, 1)
+            FocusedBorderThickness: =4
+            Height: =130
+            HoverFill: =RGBA(105, 121, 126, 1)
+            PressedFill: =RGBA(105, 121, 126, 1)
+            Width: =App.Width
+            Y: =App.Height - Self.Height
+            ZIndex: =29
+
+        Image7_7 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =history_grey
+            OnSelect: =Navigate(BrowseScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.7
+            Y: =App.Height - Self.Height
+            ZIndex: =30
+
+        Image8_7 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =register_red
+            OnSelect: =Navigate(ProductCategoryScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: |-
+                =LookUp('[MR01]app_userpermissions',
+                    User_Email = User().Email && (Permission_Level = "1" || Permission_Level = "3"), true)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.3
+            Y: =App.Height - Self.Height
+            ZIndex: =31
+
+        Image9_7 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =inspect_grey
+            OnSelect: =Navigate(InspectScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: |-
+                =LookUp('[MR01]app_userpermissions',
+                    User_Email = User().Email && (Permission_Level = "2" || Permission_Level = "3"), true)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.5
+            Y: =App.Height - Self.Height
+            ZIndex: =32
+
+        Image10_7 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =home_grey
+            OnSelect: =Navigate(MainScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.1
+            Y: =App.Height - Self.Height
+            ZIndex: =33
+
+        Image11_7 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =support_grey
+            OnSelect: =Navigate(SupportScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.9
+            Y: =App.Height - Self.Height
+            ZIndex: =34
+

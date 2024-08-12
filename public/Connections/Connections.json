@@ -1,0 +1,95 @@
+{
+  "3c35a738-a727-4d0d-bf10-410f273aee3f": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/jayawan/releases/v1.0.1697/1.0.1697.3786/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://solaredge0.sharepoint.com/sites/SPT_Project": {
+        "dataSources": {
+          "[FM_02]prod_history_BCP": {
+            "tableName": "093b5727-6924-4c69-81fa-5f145387dc69"
+          },
+          "[MR_01]_inspection_itemcode": {
+            "tableName": "642c5351-70dd-4528-a638-0956d1f919ae"
+          },
+          "[MR_01]_user_settings": {
+            "tableName": "60ba685d-d0ab-4da8-908d-8d4bd029cb3b"
+          },
+          "[MR_01]Manufacturing Record": {
+            "tableName": "8c7ffc7d-1a0f-47e9-89fb-5969a1a2fd93"
+          },
+          "[MR01]app_userpermissions": {
+            "tableName": "047f819c-c32b-43ce-8a64-1f8f2872e587"
+          },
+          "_db_customercode": {
+            "tableName": "e24c3504-150a-4b82-b48e-2693de132d22"
+          },
+          "_db_linecode": {
+            "tableName": "4537c5f1-f212-4e43-8bd8-6fcaf347be81"
+          },
+          "_db_product_ver_code": {
+            "tableName": "a1857942-4fb1-4cdb-96d1-919248207a19"
+          },
+          "_db_productcode": {
+            "tableName": "c02e5597-b382-468f-8824-e8a682a700fa"
+          },
+          "_db_producttypecode": {
+            "tableName": "87fd2b1d-70cf-491c-bf35-9bd1e29781f6"
+          },
+          "_db_purchase_order": {
+            "tableName": "1ec03dc6-6365-46dc-ba35-b0978f981dec"
+          },
+          "_db_work_order": {
+            "tableName": "522e5533-7ea3-4a65-b57b-227b8eb17c73"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "[MR_01]Manufacturing Record",
+      "[MR01]app_userpermissions",
+      "[MR_01]_inspection_itemcode",
+      "_db_work_order",
+      "_db_purchase_order",
+      "_db_productcode",
+      "_db_product_ver_code",
+      "_db_linecode",
+      "_db_customercode",
+      "_db_producttypecode",
+      "[MR_01]_user_settings",
+      "[FM_02]prod_history_BCP"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "3c35a738-a727-4d0d-bf10-410f273aee3f"
+  },
+  "b91f25b0-2f27-48bc-bcaf-396b20b1c6e6": {
+    "appActions": [
+      "SendEmail"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1686/1.0.1686.3706/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "b91f25b0-2f27-48bc-bcaf-396b20b1c6e6"
+  }
+}

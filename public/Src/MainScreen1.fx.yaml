@@ -1,0 +1,430 @@
+MainScreen1 As screen:
+    LoadingSpinnerColor: =RGBA(105, 121, 126, 1)
+
+    cont3_inspectionlist As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        Height: =(App.Height - 170 - 60 - 140) * 0.5
+        Visible: |-
+            =LookUp('[MR01]app_userpermissions',
+                User_Email = User().Email && (Permission_Level = "2" || Permission_Level = "3"), true)
+        Width: =App.Width - 40
+        X: =20
+        Y: =cont2_bichart.Y + cont2_bichart.Height + 20
+        ZIndex: =14
+
+        "Gallery4 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Dotted
+            DelayItemLoading: =true
+            Height: =Parent.Height - Label3_1.Height - 30
+            Items: =Filter('[MR_01]Manufacturing Record', STATUS.Value = "생산완료")
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: |-
+                =// OnSelect 이벤트
+                Set(varProductSN, ThisItem.PRODUCT_SN);
+                Navigate(InspectScreen1, ScreenTransition.None);
+            TemplatePadding: =0
+            TemplateSize: =116
+            Visible: |-
+                =LookUp('[MR01]app_userpermissions',
+                    User_Email = User().Email && (Permission_Level = "2" || Permission_Level = "3"), true)
+            Width: =Parent.Width
+            Y: =Label3_1.Height + 10
+            ZIndex: =1
+
+            Title1 As label:
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =gblFontSize
+                Text: =ThisItem.Type.Value
+                VerticalAlign: =VerticalAlign.Top
+                Width: =gblFontSize * 6
+                X: =15
+                Y: =40
+                ZIndex: =1
+
+            Subtitle1 As label:
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =gblFontSize
+                Text: =ThisItem.STATUS.Value
+                VerticalAlign: =VerticalAlign.Top
+                Width: =gblFontSize * 6
+                X: =NextArrow1.X - Self.Width - 10
+                Y: =40
+                ZIndex: =2
+
+            Body1 As label:
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =gblFontSize
+                Text: =ThisItem.PRODUCT_SN
+                VerticalAlign: =VerticalAlign.Top
+                Width: =gblFontSize * 10
+                X: =Title1.X + Title1.Width + 10
+                Y: =40
+                ZIndex: =3
+
+            NextArrow1 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Color: =RGBA(166, 166, 166, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =50
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Tooltip: ="항목 세부 정보 보기"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =35
+                ZIndex: =4
+
+            Separator1 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =5
+
+            Rectangle1 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+                Height: =Parent.TemplateHeight - Separator1.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =6
+
+        Label3_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =51
+            Size: =gblFontSize
+            Text: ="■ 검사 대기 제품 목록"
+            Width: =Parent.Width
+            ZIndex: =2
+
+    cont2_bichart As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        Height: =(App.Height - 170 - 60 - 100) * 0.5
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =App.Width - 40
+        X: =20
+        Y: =cont1_label.Height + 20
+        ZIndex: =16
+
+        PowerBI1 As powerbi:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            DashboardId: ="34b5c389-65f9-4cd9-92e3-808c6e4faac1"
+            Height: =Parent.Height - Label3_2.Height
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=34b5c389-65f9-4cd9-92e3-808c6e4faac1&tileId=89f92a4c-b771-4dbf-9d26-97ab99011f67&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUItUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnt9fQ%3d%3d"
+            Width: =cont2_bichart.Width
+            WorkspaceId: ="__my-workspace"
+            Y: =Label3_2.Height
+            ZIndex: =1
+
+        Label3_2 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =51
+            Size: =gblFontSize
+            Text: ="■ System 생산 차트"
+            Width: =Parent.Width
+            ZIndex: =3
+
+    cont2_line As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(220, 223, 224, 1)
+        Height: =1
+        Width: =App.Width * 0.75
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =cont2_bichart.Y + cont2_bichart.Height
+        ZIndex: =17
+
+    cont1_label As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =170
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =App.Width
+        ZIndex: =18
+
+        Image1 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =DisplayMode.View
+            FocusedBorderThickness: =4
+            Height: =125
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: ='SEKR Logo'
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =295
+            X: =20
+            Y: =26
+            ZIndex: =1
+
+        Label2 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            Size: =20
+            Text: =User().FullName
+            Width: =180
+            X: =Image2.X - Self.Width - 20
+            Y: =Image2.Y
+            ZIndex: =2
+
+        Image2 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =70
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =User().Image
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =70
+            X: =Parent.Width - Self.Width - 20
+            Y: =(Parent.Height - Self.Height) * 0.6
+            ZIndex: =3
+
+        Label2_1 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =25
+            Size: =12
+            Text: =User().Email
+            Width: =250
+            X: =Image2.X - Self.Width - 20
+            Y: =Label2.Height + Label2.Y + 10
+            ZIndex: =4
+
+        TextCanvas5 As 텍스트:
+            Align: ='TextCanvas.Align'.End
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(106, 122, 127, 1)
+            Height: =32
+            Size: =15
+            Text: ="현재 로그인 정보"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =200
+            X: =Parent.Width - Self.Width - 20
+            Y: =Image2.Y - Self.Height - 5
+            ZIndex: =5
+
+    cont4_menubar As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =22
+
+        Rectangle2 As rectangle:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =1
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(219, 221, 222, 1)
+            FocusedBorderThickness: =4
+            Height: =130
+            HoverFill: =RGBA(105, 121, 126, 1)
+            PressedFill: =RGBA(105, 121, 126, 1)
+            Width: =App.Width
+            Y: =App.Height - Self.Height
+            ZIndex: =8
+
+        Image7 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =history_grey
+            OnSelect: =Navigate(BrowseScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.7
+            Y: =App.Height - Self.Height
+            ZIndex: =9
+
+        Image8 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =register_grey
+            OnSelect: =Navigate(ProductCategoryScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: |-
+                =LookUp('[MR01]app_userpermissions',
+                    User_Email = User().Email && (Permission_Level = "1" || Permission_Level = "3"), true)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.3
+            Y: =App.Height - Self.Height
+            ZIndex: =10
+
+        Image9 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =inspect_grey
+            OnSelect: =Navigate(InspectScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: |-
+                =LookUp('[MR01]app_userpermissions',
+                    User_Email = User().Email && (Permission_Level = "2" || Permission_Level = "3"), true)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.5
+            Y: =App.Height - Self.Height
+            ZIndex: =11
+
+        Image10 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =home_red
+            OnSelect: =Navigate(MainScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.1
+            Y: =App.Height - Self.Height
+            ZIndex: =12
+
+        Image11 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =120
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =support_grey
+            OnSelect: =Navigate(SupportScreen1, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =(Parent.Width - Self.Width) * 0.9
+            Y: =App.Height - Self.Height
+            ZIndex: =13
+

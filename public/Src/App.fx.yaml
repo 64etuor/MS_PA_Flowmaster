@@ -1,0 +1,33 @@
+App As appinfo:
+    BackEnabled: =true
+    ConfirmExit: =true
+    ConfirmExitMessage: ="정말로 앱을 종료하시겠습니까?"
+    OnStart: |+
+        =//Set(varIsDuplicate, false) ;
+        //Set(varIsBMSDuplicate, false) ;
+        //Set(varPONo, Blank()) ;
+        //Set(varPN, Blank()) ;
+        //Set(varUPN, Blank()) ;
+        //Set(varCust, Blank()) ;
+        Set(varTypeKey, LookUp(_db_productcode, ProductNo = varPN.Value).TypeKey) ;
+        Set(list_height, 200) ;
+        Set(form_width, DataCardKey16.Width) ;
+        Set(tb_mode, If(App.Width > 800, true, false)) ;
+        ClearCollect(UserSettingsCollection, Filter('[MR_01]_user_settings', User.Email = User().Email));
+        If(
+            !IsEmpty(UserSettingsCollection), 
+            Set(gblFontSize, First(UserSettingsCollection).FontSize),
+            Set(gblFontSize, 25)
+        )
+        
+        
+    StartScreen: =
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+
