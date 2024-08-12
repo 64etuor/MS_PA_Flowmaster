@@ -299,6 +299,7 @@ RegisterScreen_BCP As screen:
                 Height: =list_height
                 Required: =false
                 Update: =DataCardValue_bcp_base.Value
+                Visible: =true
                 Width: =600
                 X: =0
                 Y: =6

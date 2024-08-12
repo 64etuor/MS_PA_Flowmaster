@@ -118,13 +118,13 @@
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "",
     "ManualOfflineProfileId": "",
-    "Name": "Flow Master",
+    "Name": "Flow Master(MVP)",
     "OriginatingVersion": "1.341",
     "ParserErrorCount": 0,
     "ShowStatusBar": true
   },
   "PublishInfo": {
-    "AppName": "Flow Master",
+    "AppName": "Flow Master(MVP)",
     "BackgroundColor": "rgba(255, 255, 255, 1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "",

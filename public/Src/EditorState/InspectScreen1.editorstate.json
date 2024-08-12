@@ -1296,7 +1296,7 @@
       "MetaDataIDKey": "",
       "Name": "Container2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6484,7 +6484,7 @@
       "MetaDataIDKey": "",
       "Name": "IconAccept1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6706,7 +6706,7 @@
       "MetaDataIDKey": "",
       "Name": "IconBackarrow1_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7189,7 +7189,7 @@
       "MetaDataIDKey": "",
       "Name": "Image11_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7656,7 +7656,7 @@
       "MetaDataIDKey": "",
       "Name": "Image7_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7908,7 +7908,7 @@
       "MetaDataIDKey": "",
       "Name": "Image8_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8173,7 +8173,7 @@
       "MetaDataIDKey": "",
       "Name": "Image9_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8580,7 +8580,7 @@
       "MetaDataIDKey": "",
       "Name": "InspectForm1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8799,7 +8799,7 @@
       "MetaDataIDKey": "",
       "Name": "LblAppName3_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9231,7 +9231,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
