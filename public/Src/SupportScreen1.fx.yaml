@@ -157,7 +157,8 @@
 
     Container5 As groupContainer.manualLayoutContainer:
         BorderStyle: =BorderStyle.None
-        Height: =gblFontSize * 9
+        Height: |
+            =220
         RadiusBottomLeft: =4
         RadiusBottomRight: =4
         RadiusTopLeft: =4
@@ -174,8 +175,8 @@
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             Font: =Font.'Segoe UI'
-            Height: =212
-            Size: =gblFontSize - 10
+            Height: =220
+            Size: =gblFontSize - 5
             Text: |-
                 ="APP Infomation
                 
@@ -370,7 +371,7 @@
             VerticalAlign: =""
             Width: =468
             X: =(App.Width - Self.Width) * 0.5
-            Y: =cont2_line_3.Y + 15
+            Y: =Container5.Y + Container5.Height + 10
             ZIndex: =42
 
         Icon1 As icon.Leave:
@@ -390,6 +391,6 @@
             PressedFill: =RGBA(0, 0, 0, 0)
             Width: =35
             X: =ButtonCanvas1.X + 10
-            Y: =ButtonCanvas1.Y + 5
+            Y: =Container5.Y + Container5.Height + 10
             ZIndex: =43
 

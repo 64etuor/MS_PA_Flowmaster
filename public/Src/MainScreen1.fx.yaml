@@ -12,7 +12,7 @@ MainScreen1 As screen:
         Y: =cont2_bichart.Y + cont2_bichart.Height + 20
         ZIndex: =14
 
-        "Gallery4 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+        "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderStyle: =BorderStyle.Dotted
             DelayItemLoading: =true
@@ -25,13 +25,37 @@ MainScreen1 As screen:
                 Set(varProductSN, ThisItem.PRODUCT_SN);
                 Navigate(InspectScreen1, ScreenTransition.None);
             TemplatePadding: =0
-            TemplateSize: =116
+            TemplateSize: =104
             Visible: |-
                 =LookUp('[MR01]app_userpermissions',
                     User_Email = User().Email && (Permission_Level = "2" || Permission_Level = "3"), true)
             Width: =Parent.Width
             Y: =Label3_1.Height + 10
             ZIndex: =1
+
+            Image7 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =72
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: =ThisItem.IMG_1
+                ImagePosition: =ImagePosition.Stretch
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =72
+                X: =16
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =1
 
             Title1 As label:
                 Color: =RGBA(50, 49, 48, 1)
@@ -45,12 +69,13 @@ MainScreen1 As screen:
                 PaddingRight: =0
                 PaddingTop: =0
                 Size: =gblFontSize
-                Text: =ThisItem.Type.Value
+                Text: =ThisItem.PRODUCT_NO
                 VerticalAlign: =VerticalAlign.Top
-                Width: =gblFontSize * 6
-                X: =15
-                Y: =40
-                ZIndex: =1
+                Width: =gblFontSize * 20
+                X: =Image7.X + Image7.Width + 20
+                Y: |
+                    =10
+                ZIndex: =2
 
             Subtitle1 As label:
                 Color: =RGBA(51, 51, 51, 1)
@@ -63,54 +88,24 @@ MainScreen1 As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =gblFontSize
-                Text: =ThisItem.STATUS.Value
+                Size: =gblFontSize - 3
+                Text: =ThisItem.Mfg_DATE
                 VerticalAlign: =VerticalAlign.Top
-                Width: =gblFontSize * 6
-                X: =NextArrow1.X - Self.Width - 10
-                Y: =40
-                ZIndex: =2
-
-            Body1 As label:
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Font: =Font.'Segoe UI'
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =gblFontSize
-                Text: =ThisItem.PRODUCT_SN
-                VerticalAlign: =VerticalAlign.Top
-                Width: =gblFontSize * 10
-                X: =Title1.X + Title1.Width + 10
-                Y: =40
+                Width: =gblFontSize * 20
+                X: =Title1.X
+                Y: =Title1.Y + Title1.Height + 10
                 ZIndex: =3
 
             NextArrow1 As icon.ChevronRight:
                 AccessibleLabel: =Self.Tooltip
-                BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(166, 166, 166, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(220, 220, 220, 1)
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                FocusedBorderThickness: =4
                 Height: =50
-                HoverBorderColor: =RGBA(0, 0, 0, 0)
-                HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
-                HoverFill: =RGBA(0, 0, 0, 0)
                 Icon: =Icon.ChevronRight
                 OnSelect: =Select(Parent)
                 PaddingBottom: =16
                 PaddingLeft: =16
                 PaddingRight: =16
                 PaddingTop: =16
-                PressedBorderColor: =RGBA(0, 0, 0, 0)
-                PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
-                PressedFill: =RGBA(0, 0, 0, 0)
                 Tooltip: ="항목 세부 정보 보기"
                 Width: =50
                 X: =Parent.TemplateWidth - Self.Width - 12
