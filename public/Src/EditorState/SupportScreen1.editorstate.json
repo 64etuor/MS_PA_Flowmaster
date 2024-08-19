@@ -91,7 +91,7 @@
       "MetaDataIDKey": "",
       "Name": "ButtonCanvas1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -312,7 +312,7 @@
       "MetaDataIDKey": "",
       "Name": "cont2_line_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -774,7 +774,7 @@
       "MetaDataIDKey": "",
       "Name": "cont2_line_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -956,7 +956,7 @@
       "MetaDataIDKey": "",
       "Name": "Container3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1145,7 +1145,7 @@
       "MetaDataIDKey": "",
       "Name": "Container5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1373,7 +1373,7 @@
       "MetaDataIDKey": "",
       "Name": "Icon1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1560,7 +1560,7 @@
       "MetaDataIDKey": "",
       "Name": "IconBackarrow1_4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1775,7 +1775,7 @@
       "MetaDataIDKey": "%TemplatePhoneIconMail.ID%",
       "Name": "iconMail2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2339,7 +2339,7 @@
       "MetaDataIDKey": "",
       "Name": "Label7",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2913,7 +2913,7 @@
       "MetaDataIDKey": "%TemplatePhoneLblAppName.ID%",
       "Name": "LblAppName4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3142,7 +3142,7 @@
       "MetaDataIDKey": "%TemplatePhoneLblEmailMessage.ID%",
       "Name": "LblEmailMessage2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3371,7 +3371,7 @@
       "MetaDataIDKey": "%TemplatePhoneLblEmailSubject.ID%",
       "Name": "LblEmailSubject2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3628,7 +3628,7 @@
       "MetaDataIDKey": "",
       "Name": "nav_bar_8",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3723,7 +3723,7 @@
       "MetaDataIDKey": "%TemplatePhoneRectQuickActionBar.ID%",
       "Name": "RectQuickActionBar4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4341,7 +4341,7 @@
       "MetaDataIDKey": "%TemplatePhoneTextEmailMessage.ID%",
       "Name": "TextEmailMessage2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4682,7 +4682,7 @@
       "MetaDataIDKey": "%TemplatePhoneTextEmailSubject.ID%",
       "Name": "TextEmailSubject2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
