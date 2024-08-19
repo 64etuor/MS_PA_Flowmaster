@@ -99,7 +99,7 @@ nav_bar As CanvasComponent:
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverFill: =RGBA(0, 0, 0, 0)
             Image: =If ( App.ActiveScreen = nav_bar.browseScreen, history_red, history_grey )
-            OnSelect: =Navigate ( nav_bar.inspectScreen, ScreenTransition.None )
+            OnSelect: =Navigate ( nav_bar.browseScreen, ScreenTransition.None )
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedFill: =RGBA(0, 0, 0, 0)
             Width: =70

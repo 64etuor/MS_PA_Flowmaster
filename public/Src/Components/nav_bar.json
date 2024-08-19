@@ -1174,7 +1174,7 @@
               },
               {
                 "Category": "Behavior",
-                "InvariantScript": "Navigate ( nav_bar.inspectScreen, ScreenTransition.None )",
+                "InvariantScript": "Navigate ( nav_bar.browseScreen, ScreenTransition.None )",
                 "Property": "OnSelect",
                 "RuleProviderType": "User"
               }
@@ -2674,7 +2674,7 @@
       "supportScreen",
       "userPermission"
     ],
-    "LastModifiedTimestamp": "638596245872451543",
+    "LastModifiedTimestamp": "638596246387523346",
     "Name": "nav_bar",
     "Rules": [
       {
@@ -2824,7 +2824,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638596245872451543",
+  "LastModifiedTimestamp": "638596246387523346",
   "Name": "7a9e132d80e24d90b4cbd9afdee4d772",
   "OverridableProperties": {},
   "Version": "1.0"
