@@ -312,128 +312,6 @@
         Y: =Container3.Y + Container3.Height
         ZIndex: =39
 
-    cont4_menubar_5 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =1016
-        ZIndex: =39
-
-        Rectangle2_4 As rectangle:
-            BorderColor: =RGBA(219, 219, 219, 1)
-            BorderThickness: =1
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            DisplayMode: =DisplayMode.Disabled
-            Fill: =RGBA(219, 221, 222, 1)
-            FocusedBorderThickness: =4
-            Height: =120
-            HoverFill: =RGBA(105, 121, 126, 1)
-            PressedFill: =RGBA(105, 121, 126, 1)
-            Width: =App.Width
-            Y: =App.Height - Self.Height
-            ZIndex: =33
-
-        Image7_4 As image:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            FocusedBorderThickness: =4
-            Height: =120
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Image: =history_grey
-            OnSelect: =Navigate(BrowseScreen1, ScreenTransition.Fade)
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Width: =60
-            X: =(Parent.Width - Self.Width) * 0.7
-            Y: =App.Height - Self.Height
-            ZIndex: =34
-
-        Image8_4 As image:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            FocusedBorderThickness: =4
-            Height: =120
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Image: =register_grey
-            OnSelect: =Navigate(RegisterScreen_BPU, ScreenTransition.Fade)
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Visible: |-
-                =LookUp('[MR01]app_userpermissions',
-                    User_Email = User().Email && (Permission_Level = "1" || Permission_Level = "3"), true)
-            Width: =60
-            X: =(Parent.Width - Self.Width) * 0.3
-            Y: =App.Height - Self.Height
-            ZIndex: =35
-
-        Image9_4 As image:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            FocusedBorderThickness: =4
-            Height: =120
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Image: =inspect_grey
-            OnSelect: =Navigate(InspectScreen1, ScreenTransition.Fade)
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Visible: |-
-                =LookUp('[MR01]app_userpermissions',
-                    User_Email = User().Email && (Permission_Level = "2" || Permission_Level = "3"), true)
-            Width: =60
-            X: =(Parent.Width - Self.Width) * 0.5
-            Y: =App.Height - Self.Height
-            ZIndex: =36
-
-        Image10_4 As image:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            FocusedBorderThickness: =4
-            Height: =120
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Image: =home_grey
-            OnSelect: =Navigate(MainScreen1, ScreenTransition.Fade)
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Width: =60
-            X: =(Parent.Width - Self.Width) * 0.1
-            Y: =App.Height - Self.Height
-            ZIndex: =37
-
-        Image11_4 As image:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            FocusedBorderThickness: =4
-            Height: =120
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Image: =support_red
-            OnSelect: =Navigate(SupportScreen1, ScreenTransition.Fade)
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Width: =60
-            X: =(Parent.Width - Self.Width) * 0.9
-            Y: =App.Height - Self.Height
-            ZIndex: =38
-
     cont2_line_2 As groupContainer.manualLayoutContainer:
         BorderStyle: =BorderStyle.None
         Fill: =RGBA(220, 223, 224, 1)
@@ -452,6 +330,18 @@
         X: =(App.Width - Self.Width) * 0.5
         Y: =Container5.Y + Container5.Height
         ZIndex: =41
+
+    nav_bar_8 As nav_bar:
+        browseScreen: =BrowseScreen1
+        homeScreen: =MainScreen1
+        inspectScreen: =InspectScreen1
+        registerScreen: =ProductCategoryScreen1
+        supportScreen: =SupportScreen1
+        userPermission: |-
+            =LookUp ('[MR01]app_userpermissions',
+                    User_Email = User().Email, Permission_Level)
+        Y: =App.Height - Self.Height
+        ZIndex: =44
 
     Group1 As group:
         Height: =5

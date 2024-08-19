@@ -1,0 +1,198 @@
+nav_bar As CanvasComponent:
+    browseScreen: =App.ActiveScreen
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =130
+    homeScreen: =App.ActiveScreen
+    inspectScreen: =App.ActiveScreen
+    registerScreen: =App.ActiveScreen
+    supportScreen: =App.ActiveScreen
+    userPermission: ="텍스트"
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    cont_nav_bar As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(214, 221, 224, 1)
+        BorderThickness: =1
+        DropShadow: =DropShadow.Light
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =11
+
+        home As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =70
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =If ( App.ActiveScreen = nav_bar.homeScreen, home_red, home_grey )
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =( Parent.Width - Self.Width ) * 0.1
+            Y: |
+                =20
+            ZIndex: =1
+
+        register As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =70
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: |-
+                =If (
+                    Or(
+                        App.ActiveScreen = nav_bar.homeScreen,
+                        App.ActiveScreen = nav_bar.inspectScreen,
+                        App.ActiveScreen = nav_bar.browseScreen,
+                        App.ActiveScreen = nav_bar.supportScreen
+                    ), register_grey, register_red
+                )
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =If(nav_bar.userPermission = "1" || nav_bar.userPermission = "3", true, false)
+            Width: =70
+            X: =( Parent.Width - Self.Width ) * 0.3
+            Y: =home.Y
+            ZIndex: =2
+
+        inspect As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =70
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =If ( App.ActiveScreen = nav_bar.inspectScreen, inspect_red, inspect_grey )
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =If(nav_bar.userPermission = "2" || nav_bar.userPermission = "3", true, false)
+            Width: =70
+            X: =( Parent.Width - Self.Width ) * 0.5
+            Y: =home.Y
+            ZIndex: =3
+
+        browse As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =70
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =If ( App.ActiveScreen = nav_bar.browseScreen, history_red, history_grey )
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =( Parent.Width - Self.Width ) * 0.7
+            Y: =home.Y
+            ZIndex: =4
+
+        support As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =70
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =If ( App.ActiveScreen = nav_bar.supportScreen, support_red, support_grey )
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =70
+            X: =( Parent.Width - Self.Width ) * 0.9
+            Y: =home.Y
+            ZIndex: =5
+
+        txt_home As 텍스트:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Font: =Font.'Segoe UI'
+            FontColor: =If ( App.ActiveScreen = nav_bar.homeScreen, Color.Red, Color.Gray )
+            Height: =32
+            Text: ="홈"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =70
+            X: =home.X
+            Y: =home.Y + home.Height
+            ZIndex: =6
+
+        txt_register As 텍스트:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Font: =Font.'Segoe UI'
+            FontColor: |-
+                =If (
+                    Or(
+                        App.ActiveScreen = nav_bar.homeScreen,
+                        App.ActiveScreen = nav_bar.inspectScreen,
+                        App.ActiveScreen = nav_bar.browseScreen,
+                        App.ActiveScreen = nav_bar.supportScreen
+                    ), Color.Gray, Color.Red
+                )
+            Height: =32
+            Text: ="생산"
+            Visible: =If(nav_bar.userPermission = "1" || nav_bar.userPermission = "3", true, false)
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =70
+            X: =register.X
+            Y: =txt_home.Y
+            ZIndex: =7
+
+        txt_inspect As 텍스트:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Font: =Font.'Segoe UI'
+            FontColor: =If ( App.ActiveScreen = nav_bar.inspectScreen, Color.Red, Color.Gray )
+            Height: =32
+            Text: ="검사"
+            Visible: =If(nav_bar.userPermission = "2" || nav_bar.userPermission = "3", true, false)
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =70
+            X: =inspect.X
+            Y: =txt_home.Y
+            ZIndex: =8
+
+        txt_browse As 텍스트:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Font: =Font.'Segoe UI'
+            FontColor: =If ( App.ActiveScreen = nav_bar.browseScreen, Color.Red, Color.Gray )
+            Height: =32
+            Text: ="조회"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =70
+            X: =browse.X
+            Y: =txt_home.Y
+            ZIndex: =9
+
+        txt_support As 텍스트:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Font: =Font.'Segoe UI'
+            FontColor: =If ( App.ActiveScreen = nav_bar.supportScreen, Color.Red, Color.Gray )
+            Height: =32
+            Text: ="지원"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =70
+            X: =support.X
+            Y: =txt_home.Y
+            ZIndex: =10
+

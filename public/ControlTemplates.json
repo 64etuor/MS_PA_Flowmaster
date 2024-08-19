@@ -279,7 +279,7 @@
     "Name": "PowerApps_CoreControls_DatePickerCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "날짜 선택",
-    "Version": "0.0.32"
+    "Version": "0.0.33"
   },
   "드롭다운": {
     "CustomGroupControlTemplateName": "",
@@ -294,7 +294,7 @@
     "Name": "PowerApps_CoreControls_DropdownCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "드롭다운",
-    "Version": "0.0.41"
+    "Version": "0.0.42"
   },
   "바코드 판독기": {
     "CustomGroupControlTemplateName": "",
@@ -398,7 +398,7 @@
     "Name": "PowerApps_CoreControls_ComboboxCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "콤보 상자",
-    "Version": "0.0.39"
+    "Version": "0.0.40"
   },
   "텍스트": {
     "CustomGroupControlTemplateName": "",
@@ -413,7 +413,7 @@
     "Name": "PowerApps_CoreControls_TextCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "텍스트",
-    "Version": "0.0.39"
+    "Version": "0.0.40"
   },
   "텍스트 입력": {
     "CustomGroupControlTemplateName": "",
@@ -428,7 +428,7 @@
     "Name": "PowerApps_CoreControls_TextInputCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "텍스트 입력",
-    "Version": "0.0.41"
+    "Version": "0.0.44"
   },
   "토글": {
     "CustomGroupControlTemplateName": "",
@@ -443,6 +443,6 @@
     "Name": "PowerApps_CoreControls_Toggle",
     "OverridableProperties": {},
     "TemplateDisplayName": "토글",
-    "Version": "1.1.0"
+    "Version": "1.1.1"
   }
 }
